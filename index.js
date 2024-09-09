@@ -29,7 +29,7 @@ app.get("/about", function (req, res) {
 });
 
 app.listen(port, () => {
-  console.log(`iNotebook backend listening at http://localhost:${port}`)
+  console.log(`iNotebook backend listening at port: ${port}`)
 })
 
 mongoose.set("strictQuery", false);
