@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const express = require('express')
-var cors = require('cors')
+const path = require('path')
+const cors = require('cors')
 const dotenv = require('dotenv')
 dotenv.config();
 
@@ -15,16 +16,16 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use('/api/auth', require('./routes/auth'))
 app.use('/api/notes', require('./routes/notes'))
 
-app.get("/login", function(req,res) {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
-});
-    
-app.get("/register", function(req,res) {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
+app.get("/login", function (req, res) {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-app.get("/about", function(req,res) {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
+app.get("/register", function (req, res) {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
+app.get("/about", function (req, res) {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.listen(port, () => {
